@@ -12,14 +12,15 @@
 float MarksAverage(std::list<int> marks) {
     // This function calculates the average mark
     float average = 0;
-    int counter = 0;
+    int divide = 0;
 
-    for (float counter : marks) {
+    // Process
+    for (int counter : marks) {
         average = average + counter;
-        counter = counter + 1;
+        divide += 1;
     }
 
-    average = average / counter;
+    average = average/divide;
 
     return average;
 }
@@ -43,7 +44,7 @@ int main() {
                 mark_list.push_back(userMarks);
             } else if (userMarks == -1) {
                 average = MarksAverage(mark_list);
-                std::cout << "\nThe average is " << average << std::endl;
+                std::cout << "\nThe average is " << average << "%" <<std::endl;
                 break;
             } else {
                 std::cout << "\nInvalid Input." << std::endl;
